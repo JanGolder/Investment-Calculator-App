@@ -31,17 +31,21 @@ function App() {
       });
     }
 
+
+
     // do something with yearlyData ...
 
     setYearlyData(yearlyData);
   };
-
+    const resetDataHandler=()=>{
+      setYearlyData([]);
+    }
   const noDataInfo = <p style={{textAlign: 'center', marginTop: '4rem'}}>No data. Please complete the form.</p>
 
   return (
     <div>
       <Header/>
-      <Form onCalculateHandler={calculateHandler}/>
+      <Form onCalculateHandler={calculateHandler} onResetDataHandler={resetDataHandler}/>
       {/* Todo: Show below table conditionally (only once result data is available) */}
       {/* Show fallback text if no data is available */}
       {yearlyData.length >0 ? <Table yearlyData={yearlyData}/>:noDataInfo}

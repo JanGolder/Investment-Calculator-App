@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Form = ({onCalculateHandler}) => {
+const Form = ({onCalculateHandler,onResetDataHandler}) => {
 
 const [currentSavings,setCurrentSavings] = useState('');
 const [yearlySavings, setYearlySavings] = useState('');
@@ -26,6 +26,13 @@ const submitHandler = (e)=>{
     onCalculateHandler(userInput);
 }
 
+const resetHandler = ()=>{
+  setCurrentSavings('');
+  setYearlySavings('');
+  setExpectedInterest('');
+  setDuration('');
+  onResetDataHandler()
+}
 
   return (
     <form onSubmit={submitHandler} className="form">
@@ -52,7 +59,7 @@ const submitHandler = (e)=>{
         </p>
       </div>
       <p className="actions">
-        <button type="reset" className="buttonAlt">
+        <button onClick={resetHandler} type="reset" className="buttonAlt">
           Reset
         </button>
         <button type="submit" className="button">
