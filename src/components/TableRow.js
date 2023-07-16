@@ -1,7 +1,6 @@
 const TableRow = ({rowData})=>{
 
 
-    console.log(rowData)
     return (
         <tr>
         <td>{rowData.year}</td>
