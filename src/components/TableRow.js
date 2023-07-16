@@ -5,9 +5,9 @@ const TableRow = ({rowData})=>{
     return (
         <tr>
         <td>{rowData.year}</td>
-        <td>{rowData.savingsEndOfYear}</td>
-        <td>{rowData.yearlyInterest}</td>
-        <td>{rowData.yearlyInterest*rowData.year}</td>
+        <td>{rowData.savingsEndOfYear.toFixed(2)}</td>
+        <td>{rowData.yearlyInterest.toFixed(2)}</td>
+        <td>{(rowData.yearlyInterest*rowData.year).toFixed(2)}</td>
         <td>{rowData.yearlyContribution*rowData.year}</td>
       </tr>
     )
